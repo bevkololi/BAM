@@ -1,0 +1,9 @@
+venv/*
+*.pyc
+*/__pycache__/*
+.env
+.pytest_cache/*
+migrations/*
+instance/__pycache__/__init__.cpython-35.pyc
+instance/__pycache__/config.cpython-35.pyc
+.coverage

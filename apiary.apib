@@ -1,0 +1,82 @@
+FORMAT: 1A
+HOST: https://bookameal2.docs.apiary.io/#
+
+# Book A Meal API
+
+Book-A-Meal is an application that allows customers to make food orders and helps the food vendor know what the customers want to eat. This tracking helps keep work in order.
+Find it on https://bevkololi.github.io or clone the files from https://github.com/bevkololi/Book-A-Meal.git. You can then open index.html file on your browser.
+
+# Allowed HTTPS Requests
+
++ PUT     : To modify users, orders and menu 
++ POST    : To create users, meals orders and menu, and also sign up an login
++ GET     : To get meals, orders and menu
++ DELETE  : To delete meals, orders and menu using their id
+
+# Description Of Usual Server Responses:
+
++ 200 OK - the request was successful.
+
++ 201 Created - the request was successful and a resourc (meal, user) was created.
+
++ 202 Accepted - After user sign up
+
++ 204 No Content - the request was successful but there is no representation to return (i.e. the response is empty).
+
++ 400 Bad Request - the request could not be understood or was missing required parameters.
+
++ 401 Unauthorized - authentication failed or user doesn't have permissions for requested operation.
+
++ 404 Not Found - resource was not found.
+
++ 405 Method Not Allowed - requested method is not supported for resource.
+
+
+
+# Reference
+
+Meal
+## View all meals [api/v1/meals]
+
+### Get meals [GET]
+
+Caterer could use this to view meals and users too
+
++ Response 200 (application/json)
+
+        {
+            "meals": [
+                {
+                    "id": 1,
+                    "ingredients": "Ugali, fish, vegetables, spices",
+                    "name": "Ugali and fish",
+                    "price": 150
+                },
+                    "ingredients": "Cooked rice, salad, stewed beef",
+                    "name": "Rice and beef",
+                {
+                    "id": 2,
+                    "price": 320
+                },
+                {
+                    "id": 3,
+                    "ingredients": "Unripe cooked banana, stew, mutton, appetizer",
+                    "name": "Matoke and mutton",
+                    "price": 250
+                }
+            ]
+        }
+
+## Update meals [api/v1/meals/<int:id>]
+### Create a New meal [POST]
+
+Caterer could create meals that would be stored in the meals list
+
++ Request (application/json)
+
+        {
+            "id": 4,
+            "ingredients": "Managu ang githeri mixed with mashed potatoes",
+            "name": "Food added",
+            "price": 300
+        }
