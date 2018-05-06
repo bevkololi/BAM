@@ -1,8 +1,8 @@
 import unittest
 import os
 import json
-from . import create_app, db
-from . import User
+from app import create_app, db
+from app.models import User
 
 class UserTestCase(unittest.TestCase):
     """This class represents the Meal test case"""

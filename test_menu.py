@@ -2,8 +2,8 @@ import unittest
 import os
 from datetime import datetime
 import json
-from . import create_app, db
-from . import User, Menu, Meal
+from app import create_app, db
+from app.models import User, Menu, Meal
 
 class MenuTestCase(unittest.TestCase):
     """This class represents the Menu test case"""
